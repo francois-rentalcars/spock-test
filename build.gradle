@@ -1,0 +1,15 @@
+apply plugin: "groovy"
+
+version = "0.0.1-SNAPSHOT"
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile "org.spockframework:spock-core:1.2-groovy-2.4"
+    testCompile "com.github.tomakehurst:wiremock:2.19.0"
+    testCompile "com.mashape.unirest:unirest-java:1.4.9"
+}
