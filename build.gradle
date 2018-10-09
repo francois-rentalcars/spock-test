@@ -1,15 +1,27 @@
-apply plugin: "groovy"
 
-version = "0.0.1-SNAPSHOT"
+plugins {
+    id 'org.springframework.boot' version '2.0.5.RELEASE'
+    id 'java'
+    id 'groovy'
+}
 
-sourceCompatibility = 1.8
+def springBootVersion = '2.0.5.RELEASE'
+
+jar {
+    baseName = 'spock-test'
+    version = '0.0.1-SNAPSHOT'
+}
 
 repositories {
-    mavenCentral()
+    jcenter()
 }
 
 dependencies {
-    testCompile "org.spockframework:spock-core:1.2-groovy-2.4"
+
+    compile "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
+
+    testCompile "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
+    testCompile "org.spockframework:spock-spring:1.2-groovy-2.4"
     testCompile "com.github.tomakehurst:wiremock:2.19.0"
-    testCompile "com.mashape.unirest:unirest-java:1.4.9"
+
 }
